@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去看电影吧~记住5928</title>
+	<style>
+		body {
+			background-color: #f5f5f5;
+		}
+		.open-in-browser {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.open-in-browser > p,.video-route p {
+			font-size: 3em;
+			text-align: center;
+		}
+		.img-2 {
+			width: 80vw;
+			margin-top: 10vh;
+		}
+		.title{
+			font-weight: bold;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var ua = window.navigator.userAgent.toLowerCase();
+		if (
+			// 微信内置浏览器
+			ua.match(/MicroMessenger/i) == 'micromessenger' || ua.match(/WeiBo/i) == 'weibo'
+			// 安卓qq内置浏览器
+			|| ua.indexOf('mqqbrowser') > -1
+			// 苹果qq内置浏览器
+			|| ((ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1) && ua.indexOf('qq') > -1)
+			){
+			document.write('<div class="open-in-browser"><img class="img-1" src="1.jpg"><p>点击屏幕右上角[...]<br>在 浏览器 中打开<br>即可在线观影</p><img class="img-2" src="2.jpg"></div>')
+		} else {
+			var main_routes = [
+				'http://t.cn/Rg4KrzN',
+				'http://t.cn/RgGQyHa',
+				'http://suo.im/5lx5hN',
+				'http://suo.im/5e1KNi'
+			]
+			var assist_routes = [
+				'https://0x9.me/lu8nO',
+				'https://0x9.me/JS13g'
+			]
+			var html = [
+				'<p class="title">5928高清影院</p>'
+			];
+			for (var index in main_routes) {
+				html.push('<p>观影线路' + (parseInt(index) + 1) + ': <a href="' + main_routes[index] + '">点此进入>>></a></p>');
+			}
+			for (var index in assist_routes) {
+				html.push('<p>备用线路' + (parseInt(index) + 1) + ': <a href="' + assist_routes[index] + '">点此进入>>></a></p>');
+			}
+			document.write('<div class="video-route">' + html.join('') + '</div>')
+		}
+	</script>
+</body>
+</html>
