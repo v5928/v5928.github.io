@@ -1,94 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>5928高清影院~好用就收藏哟~</title>
-	<style>
-		body {
-			background-color: #f5f5f5;
-		}
-		.open-in-browser {
-			width: 100vw;
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		.open-in-browser > p,.video-route p {
-			font-size: 3em;
-			text-align: center;
-		}
-		.img-2 {
-			width: 80vw;
-			margin-top: 10vh;
-		}
-		.title{
-			font-weight: bold;
-			color: #76edf9;
-		}
-		p > .tips{
-			color: red;
-			font-size: .5em;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>5928高清影院~好用就收藏哟~</title>
+    <style>
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .open-in-browser {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .open-in-browser>p,
+    .video-route p {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .img-2 {
+        width: 80vw;
+        margin-top: 10vh;
+    }
+
+    .title {
+        font-weight: bold;
+        color: #76edf9;
+    }
+
+    p>.tips {
+        color: red;
+        font-size: .5em;
+    }
+    </style>
 </head>
+
 <body>
-	<script>
-		var ua = window.navigator.userAgent.toLowerCase();
-		if (
-			// 微信内置浏览器
-			ua.match(/MicroMessenger/i) == 'micromessenger'
-			// 安卓qq内置浏览器，注意qq前有空格
-			|| (ua.match(/ QQ/i) == ' qq' && ua.indexOf('mqqbrowser') > -1)
-			// 苹果qq内置浏览器
-			|| ((ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1) && ua.indexOf('qq') > -1)
-			){
-			document.write('<div class="open-in-browser"><img class="img-1" src="https://s1.ax1x.com/2018/07/16/PQN45d.png"><p>点击屏幕右上角[...]<br>在 浏览器 中打开<br>即可在线观影</p><img class="img-2" src="https://s1.ax1x.com/2018/07/16/PQUp2q.png"></div>')
-		} else {
-			var online_routes = [
-				'http://5928.99yule.vip/',
-				'http://t.cn/RemxRve'
-			]
-			var pan_routes = [
-				'http://925928.top/',
-				'http://gofilm.top/',
-			]
-			var hot_routes = [
-				{
-					name: '西虹市首富',
-					url: 'http://suo.im/5eu35g',
-				},
-				{
-					name: '我不是药神',
-					url: 'http://suo.im/56XQjh',
-				}
-			]
-			var html = [
-				'<p class="title">5928高清影院欢迎您</p>',
-				'<p><span id="timer">NaN</span>秒后自动进入百度云线路1...</p>'
-			];
-			for (var index in pan_routes) {
-				html.push('<p>百度云线路' + (parseInt(index) + 1) + ': <a href="' + pan_routes[index] + '">点此进入>>></a></p>');
-			}
-			for (var index in online_routes) {
-				html.push('<p>在线观影线路' + (parseInt(index) + 1) + ': <a href="' + online_routes[index] + '">点此进入>>></a></p>');
-			}
-			for (var index in hot_routes) {
-				html.push('<p>热门直达: <a href="' + hot_routes[index].url + '">' + hot_routes[index].name + '>>></a></p>');
-			}
-			document.write('<div class="video-route">' + html.join('') + '<p><span class="tips">温馨提示：好用的话，记得收藏我们哟，避免忘记~</p></span></div>')
-			var timer = 10;
-			function send(){
-				if(timer == 1){
-					window.location.href = online_routes[0];
-				} else {
-					timer--;
-					document.getElementById('timer').innerHTML = timer;
-					setTimeout('send()', 1000);
-				}
-			}
-			send();
-		}
-	</script>
+    <script>
+    var ua = window.navigator.userAgent.toLowerCase();
+    if (
+        // 微信内置浏览器
+        ua.match(/MicroMessenger/i) == 'micromessenger'
+        // 安卓qq内置浏览器，注意qq前有空格
+        ||
+        (ua.match(/ QQ/i) == ' qq' && ua.indexOf('mqqbrowser') > -1)
+        // 苹果qq内置浏览器
+        ||
+        ((ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1) && ua.indexOf('qq') > -1)
+    ) {
+        document.write('<div class="open-in-browser"><img class="img-1" src="https://s1.ax1x.com/2018/07/16/PQN45d.png"><p>点击屏幕右上角[...]<br>在 浏览器 中打开<br>即可在线观影</p><img class="img-2" src="https://s1.ax1x.com/2018/07/16/PQUp2q.png"></div>')
+    } else {
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var online_routes = [
+            'https://5928.99yule.vip/',
+            'https://t.cn/RemxRve'
+        ]
+        var pan_routes = [
+            'https://925928.top/',
+            'http://gofilm.top/',
+        ]
+        var hot_routes = [{
+                name: '一出好戏',
+                url: 'http://suo.im/5eG8Xw',
+            },
+            {
+                name: '爱情公寓',
+                url: 'http://suo.im/5fqr4t',
+            },
+            {
+                name: '西虹市首富',
+                url: 'http://suo.im/4D54Tt',
+            },
+            {
+                name: '我不是药神',
+                url: 'http://suo.im/5eG5pQ',
+            }
+        ]
+        var html = [
+            '<p class="title">5928高清影院欢迎您</p>',
+            '<p><span id="timer">NaN</span>秒后自动进入百度云线路1...</p>'
+        ];
+        var to = GetQueryString('to') || '';
+        for (var index in pan_routes) {
+            if (parseInt(index) == 0) {
+                html.push('<p>百度云线路' + (parseInt(index) + 1) + ': <a href="' + pan_routes[index] + to + '">点此进入>>></a></p>');
+            } else {
+                html.push('<p>百度云线路' + (parseInt(index) + 1) + ': <a href="' + pan_routes[index] + '">点此进入>>></a></p>');
+            }
+        }
+        for (var index in online_routes) {
+            html.push('<p>在线观影线路' + (parseInt(index) + 1) + ': <a href="' + online_routes[index] + '">点此进入>>></a></p>');
+        }
+        for (var index in hot_routes) {
+            html.push('<p>热门直达: <a href="' + hot_routes[index].url + '">' + hot_routes[index].name + '>>></a></p>');
+        }
+        document.write('<div class="video-route">' + html.join('') + '<p><span class="tips">温馨提示：好用的话，记得收藏我们哟，避免忘记~</p></span></div>')
+        var timer = 10;
+
+        function send() {
+            if (timer == 1) {
+                window.location.href = pan_routes[0] + to;
+            } else {
+                timer--;
+                document.getElementById('timer').innerHTML = timer;
+                setTimeout('send()', 1000);
+            }
+        }
+        send();
+    }
+    </script>
 </body>
+
 </html>
